@@ -104,7 +104,7 @@ action() {
   -s RAW2DIGI,L1Reco,RECO,RECOSIM \
   --datatier GEN-SIM-RECO \
   --geometry ExtendedRun4D110 \
-  --procModifiers ticl_v5 \
+  --procModifier ticl_v5 \
   --no_exec \
   --python_filename=RECO_fragment.py
 
@@ -131,7 +131,7 @@ action() {
   -s RAW2DIGI,L1Reco,RECO,RECOSIM \
   --datatier GEN-SIM-RECO \
   --geometry ExtendedRun4D110 \
-  --procModifiers ticl_v5 \
+  --procModifier ticl_v5 \
   --no_exec \
   --processName=NTUP \
   --python_filename=NTUP_fragment.py
