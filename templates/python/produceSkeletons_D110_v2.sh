@@ -104,6 +104,18 @@ action() {
   -s RAW2DIGI,L1Reco,RECO,RECOSIM \
   --datatier GEN-SIM-RECO \
   --geometry ExtendedRun4D110 \
+  --no_exec \
+  --python_filename=RECO_fragment.py
+  
+  cmsDriver.py step4  \
+  --conditions auto:phase2_realistic_T33 \
+  -n 10 \
+  --era Phase2C17I13M9 \
+  --eventcontent FEVTDEBUG \
+  --runUnscheduled  \
+  -s RAW2DIGI,L1Reco,RECO,RECOSIM \
+  --datatier GEN-SIM-RECO \
+  --geometry ExtendedRun4D110 \
   --procModifier ticl_v5 \
   --no_exec \
   --python_filename=RECOticlV5_fragment.py
