@@ -35,6 +35,23 @@ action() {
     --no_exec \
     --python_filename=GSD_fragment.py
 
+  # PU-aware GSD (mix module is instantiated with proper digitizer bunch
+  # structure; mix.input.fileNames stays empty and gets filled at runtime
+  # by GSD_GUN.py via the pu=<file> arg).
+  cmsDriver.py SingleElectronPt10_pythia8_cfi \
+    --conditions auto:phase2_realistic_T35 \
+    -n 10 \
+    --era Phase2C22I13M9 \
+    --eventcontent FEVTDEBUG \
+    -s GEN,SIM,DIGI:pdigi_valid,L1TrackTrigger,L1,L1P2GT,DIGI2RAW,HLT:@relvalRun4 \
+    --datatier GEN-SIM-DIGI-RAW \
+    --beamspot NoSmear \
+    --geometry ExtendedRun4D121 \
+    --pileup AVE_30_BX_25ns \
+    --pileup_input das:/RelValMinBias_14TeV/CMSSW_14_2_0_pre4-142X_mcRun4_realistic_v1_STD_2026_noPU-v1/GEN-SIM \
+    --no_exec \
+    --python_filename=GSD_fragment_PU.py
+
   cmsDriver.py step4 \
     --conditions auto:phase2_realistic_T35 \
     -n 10 \
